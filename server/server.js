@@ -3,16 +3,17 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 
-import { userRouter } from "./src/users/users.controller.js";
+import { employeeRouter } from "./src/controllers/emlpoyeeController.js";
+
+const app = express();
 
 const PORT = process.env.PORT || 4200;
-const app = express();
 
 async function manin() {
   app.use(express.json());
   app.use(cors());
 
-  app.use("/api/users", userRouter);
+  app.use("/api/employees", employeeRouter);
 
   app.get("/", (req, res) => {
     res.send("Hello World, my name is Zhakyp");
