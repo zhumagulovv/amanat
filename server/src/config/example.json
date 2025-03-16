@@ -1,0 +1,83 @@
+{
+  "name-company": {
+    "director": {
+      "id": 1,
+      "fullName": "",
+      "departament": "director",
+      "permissions": [
+        "create_record",
+        "read_record",
+        "update_record",
+        "delete_record"
+      ]
+    },
+    "salares": {
+      "ROP": {
+        "fullName": "",
+        "departament": "salares"
+      },
+      "registrar": {
+        "id": 1,
+        "fullName": "",
+        "departament": "salares",
+        "role": "registrar",
+        "permissions": [
+          "create_record",
+          "read_record",
+          "update_record",
+          "delete_record"
+        ]
+      },
+      "managers": [
+        {
+          "fullName": "",
+          "departament": "salares",
+          "role": "manager",
+          "permissions": ["read_record"]
+        }
+      ]
+    },
+    "education": {
+      "assistants": [
+        {
+          "id": 1,
+          "fullName": "",
+          "departament": "education",
+          "role": "assistant",
+          "permissions": [
+            "create_record",
+            "read_record",
+            "update_record",
+            "delete_record"
+          ]
+        }
+      ],
+      "mentors": [
+        {
+          "id": 1,
+          "fullName": "",
+          "age": 2005,
+          "email": "example.com@gmail.com",
+          "departament": "education",
+          "role": "Frontend mentor",
+          "groups": ["45-group", "34-group"],
+          "permissions": ["read_record", "update_record"],
+          "salary": "15%"
+        },
+        {
+          "id": 2,
+          "fullName": "",
+          "age": 2005,
+          "email": "example.com@gmail.com",
+          "departament": "education",
+          "role": "Backend mentor",
+          "groups": ["46-group", "35-group"],
+          "salary": "15%"
+        }
+      ]
+    },
+    "finance": {},
+    "HR": {},
+    "students": []
+  }
+}
