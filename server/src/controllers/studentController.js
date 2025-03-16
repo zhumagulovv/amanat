@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    const student = await studentsService.getAllStudentById(req.params.id);
+    const student = await studentsService.getStudentById(req.params.id);
     if (!student) {
       return res.status(404).json({ message: "Студент не найден" });
     }
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
     const student = await studentsService.createStudent(req.body);
     res.status(201).json(student);
   } catch (error) {
-    res.status(400).json({ message: message.error });
+    res.status(400).json({ message:  error.message});
   }
 });
 
@@ -42,7 +42,7 @@ router.put("/:id", async (req, res) => {
     );
     res.json(updateStudent);
   } catch (error) {
-    res.status(400).json({ message: message.error });
+    res.status(400).json({ message: error.message });
   }
 });
 
@@ -51,7 +51,7 @@ router.delete("/:id", async (req, res) => {
     const response = studentsService.deleteStudent(req.params.id);
     res.json(response);
   } catch (error) {
-    res.status(400).json({ message: message.error });
+    res.status(400).json({ message: error.message});
   }
 });
 

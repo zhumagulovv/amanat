@@ -24,7 +24,7 @@ export class StudentsService {
     return this.students;
   }
 
-  getAllStudentById(id) {
+  getStudentById(id) {
     const student = this.students.find((s) => s.id === parseInt(id));
 
     if (!student) {
