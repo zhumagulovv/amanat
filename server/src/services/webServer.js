@@ -6,6 +6,7 @@ import morgan from "morgan";
 import { webServerPort } from "../config/webServer.js";
 
 import router from "../routes/router.js";
+import { corsOptions } from "../middlewares/cors.middleware.js";
 
 let httpServer;
 
@@ -14,7 +15,7 @@ function initialize() {
     const app = express();
 
     app.use(express.json());
-    app.use(cors());
+    app.use(cors(corsOptions));
     app.use(morgan("dev"));
     app.use(router);
 
